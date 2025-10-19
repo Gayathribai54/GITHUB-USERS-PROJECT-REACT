@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
-import { UserContext } from './contextHOOK/Context.jsx'
+import { UserContext } from '../contextHOOK/Context.jsx'
 //import pages
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Home from './pages/Home.jsx'
 import Navbar from './components/Navbar.jsx'
-import UserPage from './pages/Userpage.jsx'
+import Userpage from './pages/Userpage.jsx'
 
 
 const App = () => {
@@ -21,15 +21,16 @@ const App = () => {
         const { data } = await axios.get('https://api.github.com/users')
         setUsers(data)
       }
-      getData();
+      // getData();
     } catch (error) {
       console.log(error)
-    }
+    };
+    getData();
   }, [])
 
   async function searchUsers(username) {
     try {
-      const { data } = await axios.get(`https://api.github.com/search/users?q=${username} `)
+      const { data } = await axios.get(`https://api.github.com/search/users?q=${username}`)
       setUsers(data.items)
     } catch (error) {
       console.log(error)
@@ -38,7 +39,7 @@ const App = () => {
 
   const getUser = async (username) => {
     try {
-      const { data } = await axios.get(` https://api.github.com/users/${username}`)
+      const { data } = await axios.get(`https://api.github.com/users/${username}`)
       return (data)
     } catch (error) {
       console.log(error)
@@ -55,7 +56,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
-          <Route path='/userpage/:username' element={<UserPage />} />
+          <Route path='/userpage/:username' element={<Userpage />} />
         </Routes>
       </UserContext.Provider>
     </>
