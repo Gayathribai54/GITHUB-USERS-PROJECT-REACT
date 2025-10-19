@@ -2,7 +2,7 @@
 
 
 import React, { useContext } from 'react'
-import { UserContext } from '../contextHOOK/Context'
+import { UserContext } from '../context/Context'
 import { Link } from 'react-router-dom';
 
 import "../styles/Users.css"

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
-import { UserContext } from '../contextHOOK/Context.jsx'
+import { UserContext } from '../context/Context.jsx'
 //import pages
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
@@ -16,17 +16,18 @@ const App = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    try {
-      const getData = async () => {
-        const { data } = await axios.get('https://api.github.com/users')
-        setUsers(data)
+    const getData = async () => {
+      try {
+        const { data } = await axios.get('https://api.github.com/users');
+        setUsers(data);
+      } catch (error) {
+        console.log(error);
       }
-      // getData();
-    } catch (error) {
-      console.log(error)
     };
+
     getData();
-  }, [])
+  }, []);
+
 
   async function searchUsers(username) {
     try {

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import "../styles/search.css"
 import { useContext } from 'react'
-import { UserContext } from '../contextHOOK/Context'
+import { UserContext } from '../context/Context'
 const Search = () => {
 
      const {users,searchUsers}= useContext(UserContext);

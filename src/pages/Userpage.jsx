@@ -3,7 +3,7 @@
 import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-import { UserContext } from '../contextHOOK/Context';
+import { UserContext } from '../context/Context';
 
 
 const UserPage = () => {
