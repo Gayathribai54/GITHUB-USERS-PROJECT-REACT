@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
-import { UserContext } from '../context/Context.jsx'
+import { UserContext } from './context/Context.jsx'
 //import pages
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
