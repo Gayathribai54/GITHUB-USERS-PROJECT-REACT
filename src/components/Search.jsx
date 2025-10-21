@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import "../styles/search.css"
+import "../styles/Search.css"
 import { useContext } from 'react'
 import { UserContext } from '../context/Context'
 const Search = () => {
